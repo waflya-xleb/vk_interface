@@ -11,7 +11,7 @@ project( vk_interface
 find_package(Vulkan REQUIRED)
 find_package(glfw3 3.4 REQUIRED)
 
-include_directories( ../../lib )
+include_directories( ../ )
 
 add_library( ${PROJECT_NAME} SHARED run.cpp createInstance.cpp createSurface.cpp pickPhysicalDevice.cpp createLogicalDevice.cpp terminate.cpp vkUtils/vkUtils.cpp )
 add_library( vk::vk_interface ALIAS ${PROJECT_NAME} )
