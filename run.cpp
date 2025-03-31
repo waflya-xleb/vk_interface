@@ -1,22 +1,24 @@
 #include "vk.hpp"
 
 void Vulkan::run( vk_param& param ) {
+#ifdef VK_DEBUG_notifications_
+	std::cout << MAGNETA << "start vulkan.run()\n" << RESET;
+#endif
 	try {
-		std::cout << MAGNETA << "start vulkan.run()\n" << RESET;
 		createInstance( param );
 		createSurface( param.window );
 		pickPhysicalDevice();
 		createLogicalDevice();
+#ifdef VK_DEBUG_notifications_
 		std::cout << MAGNETA << "custom end vulkan.run()\n" << RESET;
+#endif
 
 	} catch( su::custom_exception& ex ) {
+#ifdef VK_DEBUG_notifications_
 		std::cout << YELLOW << "custom param error. started with default parameters...\n" << RESET;
+#endif
 #ifdef VK_DEBUG_L1_
-		std::cout << YELLOW << "error in Vulkan::run()\n";
-		std::cout << "\tsu::custom_exception\n";
-		std::cout << "\ttype: " << ex.getType() << "\n";
-		std::cout << "\tmsg: " << ex.getMsg() << "\n";
-		std::cout << "\tcode: " << ex.getCode() << "\n" << RESET;
+		std::cout << YELLOW << "error in Vulkan::run()\n\tsu::custom_exception\n\ttype: " << ex.getType() << "\n\tmsg: " << ex.getMsg() << "\n\tcode: " << ex.getCode() << "\n" << RESET;
 #endif
 		param.enableValidationLayers = true;
 		param.validationLayers = { "VK_LAYER_KHRONOS_validation" };
@@ -25,7 +27,9 @@ void Vulkan::run( vk_param& param ) {
 		createSurface( param.window );
 		pickPhysicalDevice();
 		createLogicalDevice();
+#ifdef VK_DEBUG_notifications_
 		std::cout << MAGNETA << "default end vulkan.run()\n" << RESET;
+#endif
 
 	} catch( std::exception& ex ) {
 		throw std::runtime_error( ex.what() );

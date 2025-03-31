@@ -22,7 +22,7 @@ void Vulkan::createInstance( const vk_param& param ) {
 	//extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
 
 #ifdef VK_DEBUG_info_
-	std::cout << CYAN << "Vulkan extensions: \n";
+	std::cout << CYAN << "Vulkan extensions: \n" << RESET;
 	for ( uint32_t i = 0; i < extensions.size(); i++) {
 		std::cout << MAGNETA "\t" << extensions[i] << RESET << "\n";
 	}
@@ -32,7 +32,7 @@ void Vulkan::createInstance( const vk_param& param ) {
 
 	if ( param.enableValidationLayers ) {
 #ifdef VK_DEBUG_info_
-		std::cout << YELLOW << "\nсписок запрошенных слоёв проверки:\n\t" << MAGNETA;
+		std::cout << YELLOW << "список запрошенных слоёв проверки:\n\t" << MAGNETA;
 		for ( const char* layerName : param.validationLayers ) {
 			std::cout << layerName << "\n\t";
 		}

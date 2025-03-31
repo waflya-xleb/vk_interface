@@ -5,6 +5,6 @@ void Vulkan::terminate() {
 	vkDestroySurfaceKHR(instance, surface, nullptr);
 	vkDestroyInstance(instance, nullptr);
 #ifdef VK_DEBUG_notifications_
-	std::cout << CYAN << "vk terminate\n";
+	std::cout << CYAN << "vk terminate\n" << RESET;
 #endif
 }
