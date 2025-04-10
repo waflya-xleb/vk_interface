@@ -13,12 +13,12 @@ void Vulkan::run( vk_param& param ) {
 		std::cout << MAGNETA << "custom end vulkan.run()\n" << RESET;
 #endif
 
-	} catch( su::custom_exception& ex ) {
+	} catch( vk::su::custom_exception& ex ) {
 #ifdef VK_DEBUG_notifications_
 		std::cout << YELLOW << "custom param error. started with default parameters...\n" << RESET;
 #endif
 #ifdef VK_DEBUG_L1_
-		std::cout << YELLOW << "error in Vulkan::run()\n\tsu::custom_exception\n\ttype: " << ex.getType() << "\n\tmsg: " << ex.getMsg() << "\n\tcode: " << ex.getCode() << "\n" << RESET;
+		std::cout << YELLOW << "error in Vulkan::run()\n\tvk::su::custom_exception\n\ttype: " << ex.getType() << "\n\tmsg: " << ex.getMsg() << "\n" << RESET;
 #endif
 		param.enableValidationLayers = true;
 		param.validationLayers = { "VK_LAYER_KHRONOS_validation" };

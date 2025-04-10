@@ -46,7 +46,7 @@ void Vulkan::createInstance( const vk_param& param ) {
 				std::cout << layer << "\n\t";
 			}
 			std::cout << "\n" << RESET;
-			throw su::custom_exception( "instance error", "validationLayers not present.", 0 );
+			throw vk::su::custom_exception( "instance error", "validationLayers not present." );
 			//throw std::runtime_error("requested layer unavailable");
 		}
 
@@ -57,7 +57,7 @@ void Vulkan::createInstance( const vk_param& param ) {
 	}
 
         if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
-		//throw su::custom_exception( "create instance error", "failed to create instance.", 1 );
+		//throw vk_su::custom_exception( "create instance error", "failed to create instance." );
 		throw std::runtime_error("failed to create instance");
         }
 #ifdef VK_DEBUG_notifications_

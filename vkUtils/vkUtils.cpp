@@ -2,6 +2,19 @@
 
 namespace vk {
 	namespace su {
+		custom_exception::custom_exception( std::string type, std::string msg ) {
+			this->type = type;
+			this->msg = msg;
+		}// constructor custom_exception
+
+		std::string custom_exception::getType() {
+			return type;
+		}// getType()
+
+		std::string custom_exception::getMsg() {
+			return msg;
+		}// getMsg()
+
 		bool checkValidationLayerSupport( std::vector< const char* > requestedLayers, std::vector< const char* > &unavailableLayers ) {
 			
 			bool layerAvailable;
