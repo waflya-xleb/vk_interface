@@ -1,5 +1,5 @@
 ## vk_interface
-[Русский](https://) | [documentatian](https://)
+[Русский](https://github.com/waflya-xleb/vk_interface/blob/main/README.ru.md) | [documentatian](https://github.com/waflya-xleb/vk_interface/blob/main/doc/documentation.txt)
 ## Description
 Let's just agree that there will be a description here someday, okay?
 ___
