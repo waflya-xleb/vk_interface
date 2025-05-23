@@ -1,5 +1,5 @@
 ## vk_interface
-[english](https://github.com/waflya-xleb/vk_interface/blob/main/README.md)[документация](https://github.com/waflya-xleb/vk_interface/blob/main/doc/documentation.txt)
+[english](https://github.com/waflya-xleb/vk_interface/blob/main/README.md)|[документация](https://github.com/waflya-xleb/vk_interface/blob/main/doc/documentation.txt)
 ## Описание
 Давайте просто сойдёмся на том что тут когда-нибудь будет описание, ладно?
 ___
